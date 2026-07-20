@@ -5,7 +5,7 @@
   <section class="landing-card">
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Elyra Studio home">
-        <span class="brand-mark">E</span>
+        <img class="brand-logo" src="images/logo.jpg" alt="Elyra Studio logo" />
         <span>
           <strong>ELYRA</strong>
           <small>STUDIO</small>
@@ -18,7 +18,7 @@
     </header>
 
     <section id="top" class="hero">
-      <div class="eyebrow"><span></span> Kerala-inspired jewellery · Perth</div>
+      <div class="eyebrow"><span></span> Kerala-inspired jewellery · Perth <span></span> </div>
       <h1>Tradition, styled for <em>today.</em></h1>
       <p>Discover elegant Kerala jewellery for weddings, celebrations and timeless everyday styling.</p>
       <a class="primary-cta" [href]="links[0].url" target="_blank" rel="noopener noreferrer">
@@ -37,18 +37,24 @@
     <section class="links-section">
       <div class="section-heading">
         <span>Connect with us</span>
-        <small>Tap a link to explore</small>
       </div>
 
       <div class="link-grid">
         @for (link of links; track link.url) {
           <a class="social-card" [class.featured]="link.featured" [href]="link.url" target="_blank" rel="noopener noreferrer">
-            <span class="social-icon">{{ link.icon }}</span>
+            <span class="social-icon" [attr.aria-label]="link.name">
+              <app-social-icon [icon]="link.icon" [label]="link.name"></app-social-icon>
+            </span>
             <span class="social-copy">
               <strong>{{ link.name }}</strong>
               <small>{{ link.description }}</small>
             </span>
-            <span class="arrow">↗</span>
+            <span class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 17 17 7" />
+                <path d="M8 7h9v9" />
+              </svg>
+            </span>
           </a>
         }
       </div>

@@ -2,10 +2,12 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, signal } from '@angular/core';
 import { GalleryItem, SocialLink } from '../shared/models';
 import { galleryImages, socialLinks } from 'src/shared/config';
+import { SocialIconComponent } from './social-icon.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [SocialIconComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
