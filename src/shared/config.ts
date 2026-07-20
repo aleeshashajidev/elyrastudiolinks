@@ -4,7 +4,7 @@ export const socialLinks: SocialLink[] = [
     {
       name: 'WhatsApp',
       description: 'Enquire, order or book a viewing',
-      url: 'https://wa.me/61414846547?text=Hi%20Elyra%20Studio%2C%20I%20would%20like%20to%20know%20more%20about%20your%20jewellery.',
+      url: 'https://wa.me/61414846547?text=Hi%20Elyra%20Studio%2C%20I%27d%20love%20to%20enquire%20about%20your%20jewellery%20collections%20and%20book%20a%20viewing.',
       icon: 'WA',
       featured: true,
     },
@@ -16,7 +16,7 @@ export const socialLinks: SocialLink[] = [
     },
     {
       name: 'Facebook',
-      description: 'Follow our page and latest updates',
+      description: 'Follow our page for latest updates',
       url: 'https://www.facebook.com/share/1DEM3qvhya/?mibextid=wwXIfr',
       icon: 'FB',
     },
