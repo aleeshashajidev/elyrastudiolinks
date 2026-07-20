@@ -1,0 +1,76 @@
+:host {
+  --bg: #0f221d;
+  --surface: rgba(13, 35, 29, 0.78);
+  --surface-strong: rgba(20, 43, 35, 0.9);
+  --text: #f7efe2;
+  --muted: #c8bda8;
+  --line: rgba(247, 239, 226, 0.14);
+  --accent: #c79a3a;
+  --accent-soft: #e6c77a;
+  --shadow: 0 25px 70px rgba(4, 16, 12, 0.36);
+  display: block;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+:host-context(html[data-theme='light']) {
+  --bg: #f6efe6;
+  --surface: rgba(255, 252, 246, 0.8);
+  --surface-strong: rgba(255, 250, 242, 0.92);
+  --text: #18362d;
+  --muted: #5a6f63;
+  --line: rgba(24, 54, 45, 0.12);
+  --accent: #a76f1f;
+  --accent-soft: #bb8a38;
+  --shadow: 0 25px 70px rgba(93, 71, 25, 0.14);
+}
+
+.page-shell { position: relative; min-height: 100vh; overflow: hidden; padding: 18px; background: radial-gradient(circle at top, color-mix(in srgb, var(--accent) 14%, transparent), transparent 38%), var(--bg); }
+.ambient { position: fixed; width: 320px; height: 320px; border-radius: 50%; filter: blur(90px); opacity: .18; pointer-events: none; background: var(--accent); }
+.ambient-one { top: -130px; right: -110px; }
+.ambient-two { bottom: 10%; left: -170px; }
+.landing-card { position: relative; width: min(100%, 720px); margin: 0 auto; padding: 20px; border: 1px solid var(--line); border-radius: 30px; background: var(--surface); backdrop-filter: blur(24px); box-shadow: var(--shadow); animation: enter .7s ease both; }
+.topbar, footer, .section-heading, .visit-card { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: inline-flex; gap: 11px; align-items: center; color: inherit; text-decoration: none; letter-spacing: .18em; }
+.brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--accent); border-radius: 50%; font: 700 24px 'Playfair Display', serif; color: var(--accent-soft); }
+.brand strong, .brand small { display: block; }
+.brand strong { font-size: 14px; }
+.brand small { margin-top: 3px; font-size: 8px; color: var(--muted); }
+.theme-toggle { width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-strong); color: var(--text); cursor: pointer; transition: transform .25s ease, border-color .25s ease; }
+.theme-toggle:hover { transform: rotate(12deg); border-color: var(--accent); }
+.hero { padding: 64px 4px 34px; text-align: center; }
+.eyebrow { display: flex; gap: 9px; justify-content: center; align-items: center; color: var(--accent-soft); font-size: 11px; text-transform: uppercase; letter-spacing: .14em; }
+.eyebrow span { width: 28px; height: 1px; background: var(--accent); }
+h1 { max-width: 600px; margin: 18px auto; font: 700 clamp(42px, 11vw, 74px)/.96 'Playfair Display', serif; letter-spacing: -.04em; }
+h1 em { color: var(--accent-soft); font-weight: 600; }
+.hero p { max-width: 520px; margin: 0 auto 28px; color: var(--muted); line-height: 1.7; }
+.primary-cta { display: inline-flex; align-items: center; gap: 14px; padding: 15px 20px; border-radius: 999px; background: var(--accent); color: #17110a; font-weight: 700; text-decoration: none; box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 30%, transparent); transition: transform .25s ease, box-shadow .25s ease; }
+.primary-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 38px color-mix(in srgb, var(--accent) 42%, transparent); }
+.gallery { display: grid; grid-template-columns: 1.35fr .82fr; grid-template-rows: repeat(2, 130px); gap: 10px; }
+.gallery figure { margin: 0; overflow: hidden; border-radius: 20px; border: 1px solid var(--line); }
+.gallery .featured-photo { grid-row: 1 / 3; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.gallery figure:hover img { transform: scale(1.05); }
+.links-section { padding: 36px 0 20px; }
+.section-heading { margin-bottom: 14px; }
+.section-heading span { font-family: 'Playfair Display', serif; font-size: 24px; }
+.section-heading small { color: var(--muted); }
+.link-grid { display: grid; gap: 11px; }
+.social-card { display: flex; align-items: center; gap: 14px; padding: 15px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface-strong); color: var(--text); text-decoration: none; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.social-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.social-card.featured { background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 24%, var(--surface-strong)), var(--surface-strong)); }
+.social-icon { display: grid; place-items: center; flex: 0 0 48px; height: 48px; width: 48px; border-radius: 15px; background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent-soft); font-weight: 800; font-size: 12px; letter-spacing: .08em; }
+.social-copy { flex: 1; min-width: 0; }
+.social-copy strong, .social-copy small { display: block; }
+.social-copy small { margin-top: 4px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.arrow { font-size: 21px; color: var(--accent-soft); }
+.visit-card { gap: 12px; margin-top: 8px; padding: 17px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(135deg, transparent, color-mix(in srgb, var(--accent) 10%, transparent)); }
+.pin { font-size: 27px; color: var(--accent-soft); }
+.visit-card div { flex: 1; }
+.visit-card small, .visit-card strong { display: block; }
+.visit-card small { margin-bottom: 4px; color: var(--muted); }
+.visit-card a { padding: 9px 13px; border-radius: 999px; border: 1px solid var(--accent); color: var(--accent-soft); text-decoration: none; font-weight: 700; }
+footer { gap: 12px; padding: 26px 2px 4px; color: var(--muted); font-size: 11px; }
+@keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 640px) { .page-shell { padding: 40px 20px; } .landing-card { padding: 30px; } .gallery { grid-template-rows: repeat(2, 160px); } .link-grid { grid-template-columns: repeat(3, 1fr); } .social-card { min-height: 165px; flex-direction: column; align-items: flex-start; } .social-copy small { white-space: normal; line-height: 1.45; } .arrow { margin-top: auto; align-self: flex-end; } }

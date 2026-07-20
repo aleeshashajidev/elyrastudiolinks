@@ -1,0 +1,71 @@
+<main class="page-shell">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <section class="landing-card">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Elyra Studio home">
+        <span class="brand-mark">E</span>
+        <span>
+          <strong>ELYRA</strong>
+          <small>STUDIO</small>
+        </span>
+      </a>
+
+      <button class="theme-toggle" type="button" (click)="toggleTheme()" [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
+        <span>{{ isDarkMode() ? '☀' : '☾' }}</span>
+      </button>
+    </header>
+
+    <section id="top" class="hero">
+      <div class="eyebrow"><span></span> Kerala-inspired jewellery · Perth</div>
+      <h1>Tradition, styled for <em>today.</em></h1>
+      <p>Discover elegant Kerala jewellery for weddings, celebrations and timeless everyday styling.</p>
+      <a class="primary-cta" [href]="links[0].url" target="_blank" rel="noopener noreferrer">
+        Shop via WhatsApp <span>↗</span>
+      </a>
+    </section>
+
+    <section class="gallery" aria-label="Jewellery gallery">
+      @for (item of gallery; track item.src; let i = $index) {
+        <figure [class.featured-photo]="i === 0">
+          <img [src]="item.src" [alt]="item.alt" />
+        </figure>
+      }
+    </section>
+
+    <section class="links-section">
+      <div class="section-heading">
+        <span>Connect with us</span>
+        <small>Tap a link to explore</small>
+      </div>
+
+      <div class="link-grid">
+        @for (link of links; track link.url) {
+          <a class="social-card" [class.featured]="link.featured" [href]="link.url" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">{{ link.icon }}</span>
+            <span class="social-copy">
+              <strong>{{ link.name }}</strong>
+              <small>{{ link.description }}</small>
+            </span>
+            <span class="arrow">↗</span>
+          </a>
+        }
+      </div>
+    </section>
+
+    <section class="visit-card">
+      <span class="pin">⌖</span>
+      <div>
+        <small>Visit by appointment</small>
+        <strong>Beckenham, Perth WA</strong>
+      </div>
+      <a [href]="links[0].url" target="_blank" rel="noopener noreferrer">Book</a>
+    </section>
+
+    <footer>
+      <span>© 2026 Elyra Studio</span>
+      <span>Handpicked collections with a taste for elegance</span>
+    </footer>
+  </section>
+</main>
