@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, signal } from '@angular/core';
 import { GalleryItem, SocialLink } from '../shared/models';
-import { galleryImages, socialLinks } from 'src/shared/config';
+import { galleryImages, socialLinks, whatsappLink } from 'src/shared/config';
 import { SocialIconComponent } from './social-icon.component';
 
 @Component({
@@ -13,6 +13,8 @@ import { SocialIconComponent } from './social-icon.component';
 })
 export class AppComponent {
   readonly isDarkMode = signal(true);
+
+  readonly whatsappLink= whatsappLink;
 
   // Update your business links here.
   readonly links: SocialLink[] = socialLinks; 
