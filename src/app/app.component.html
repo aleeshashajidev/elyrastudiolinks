@@ -17,14 +17,10 @@
         </span>
       </a>
 
-      <button class="theme-toggle" type="button" (click)="toggleTheme()" [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
-        <span class="theme-toggle-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="5" width="18" height="14" rx="7" />
-            <circle cx="9.5" cy="12" r="3.2" />
-          </svg>
-        </span>
-      </button>
+      <label class="theme-toggle" [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'">
+        <input class="theme-toggle-input" type="checkbox" [checked]="isDarkMode()" (change)="toggleTheme()" />
+        <span class="theme-toggle-track" aria-hidden="true"></span>
+      </label>
     </header>
 
     <section id="top" class="hero">
@@ -94,6 +90,26 @@
         </figure>
       }
     </section>
+
+    <!-- <section class="reviews-section" aria-label="Customer reviews">
+      <div class="section-heading">
+        <span>Client love</span>
+      </div>
+
+      <div class="review-grid">
+        @for (review of reviews; track review.name) {
+          <article class="review-card">
+            <p class="review-quote">“{{ review.quote }}”</p>
+            <div class="review-meta">
+              <strong>{{ review.name }}</strong>
+              @if (review.role) {
+                <small>{{ review.role }}</small>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </section> -->
 
     <footer>
       <span>© 2026 Elyra Studio</span>

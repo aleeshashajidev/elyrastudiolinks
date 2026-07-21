@@ -10,3 +10,9 @@ export interface GalleryItem {
   src: string;
   alt: string;
 }
+
+export interface CustomerReview {
+  name: string;
+  quote: string;
+  role?: string;
+}
